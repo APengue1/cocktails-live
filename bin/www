@@ -5,7 +5,7 @@
  */
 
 var server = require('../server');
-var debug = require('debug')('cocktails:server');
+var debug = require('debug')('express:server');
 var http = require('http');
 
 /**
