@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
+class App extends React.PureComponent {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Edit
+            {' '}
+            <code>src/App.js</code>
+            {' '}
+            and save to reload.
           </p>
           <a
             className="App-link"
