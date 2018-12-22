@@ -1,3 +1,7 @@
+// Using require is now always relative to the server root
+// Just use require.main.require("./relative-to-root")
+require.main.require = require
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
