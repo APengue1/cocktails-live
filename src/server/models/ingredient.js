@@ -1,7 +1,7 @@
-const Base = require.main.require('./models/base')
+const Consumable = require.main.require('./models/consumable')
 
-class Ingredient extends Base {
-  model_files_pattern() {
+class Ingredient extends Consumable {
+  consumable_files_pattern() {
     return 'ingredients/*.js'
   }
 }
