@@ -8,6 +8,9 @@
     "install-client": "cd src/client && npm install",
     "lint": "npm run lint-server && npm run lint-client",
     "lint-server": "cd src/server && npm run lint",
-    "lint-client": "cd src/client && npm run lint"
+    "lint-client": "cd src/client && npm run lint",
+    "production": "npm run client-production && npm run server-production",
+    "client-production": "cd src/client && npm run production",
+    "server-production": "cd src/server && npm run production"
   }
 }
