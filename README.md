@@ -1,12 +1,9 @@
-# Express React Template
+# Cocktails Live
 
-Motivation: easily kickstart an express backend with react client.
-Uses only `express-generator` and `create-react-app` to combine both technologies with the scripts you know and love:
-- `nvm use`
-- `npm install`
-- `npm start`
-- `npm run lint`
+The Bartender chooses ingredients in stock and starts the session.  
+The Client choose and orders their cocktail though a mobile friendly web app.
 
-### To Run in Production
-- `npm run production`
+The Bartender receives the cocktail order live.  
+Once the cocktail is ready to serve, the Bartender puts the cocktail in a ready state.
 
+The Client can track their order live and pickup the cocktail once it's ready!
