@@ -1,10 +1,13 @@
 {
-    "scripts": {
-      "start": "npm run start-server | npm run start-client",
-      "start-server": "cd src/server && npm start",
-      "start-client": "cd src/client && npm start",
-      "lint": "npm run lint-server && npm run lint-client",
-      "lint-server": "cd src/server && npm run lint",
-      "lint-client": "cd src/client && npm run lint"
-    }
+  "scripts": {
+    "start": "npm run start-server | npm run start-client",
+    "start-server": "cd src/server && npm start",
+    "start-client": "cd src/client && npm start",
+    "install": "npm run install-server && npm run install-client",
+    "install-server": "cd src/server && npm install",
+    "install-client": "cd src/client && npm install",
+    "lint": "npm run lint-server && npm run lint-client",
+    "lint-server": "cd src/server && npm run lint",
+    "lint-client": "cd src/client && npm run lint"
   }
+}
