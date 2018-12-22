@@ -1,9 +1,12 @@
-const subject = require.main.require('./models/ingredient')
+const Ingredient = require.main.require('./models/ingredient')
 
 describe("Ingredient", () => {
-  describe(".all_json", () => {
+  beforeEach( () => {
+    this.subject =  new Ingredient()
+  });
+  describe("#all_json", () => {
     it("returns all ingredients", () => {
-      const all_ingredients = subject.all_json()
+      const all_ingredients = this.subject.all_json()
       expect(all_ingredients).toEqual(
         [
           { name: "Amaretto" },
