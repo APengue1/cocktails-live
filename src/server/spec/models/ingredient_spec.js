@@ -6,9 +6,8 @@ describe("Ingredient", () => {
       const all_ingredients = subject.all_json()
       expect(all_ingredients).toEqual(
         [
-          {
-            name: "7-Up"
-          }
+          { name: "Amaretto" },
+          { name: "7-Up" }
         ]
       )
     })
