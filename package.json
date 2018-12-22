@@ -11,6 +11,8 @@
     "lint-client": "cd src/client && npm run lint",
     "production": "npm run client-production && npm run server-production",
     "client-production": "cd src/client && npm run production",
-    "server-production": "cd src/server && npm run production"
+    "server-production": "cd src/server && npm run production",
+    "test": "npm run test-server",
+    "test-server": "cd src/server && npm test"
   }
 }
