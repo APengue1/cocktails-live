@@ -21,7 +21,7 @@ describe("Order", () => {
   })
 
   describe("#constructor", () => {
-    it("returns the customer identity", () => {
+    it("builds the order with given parameters", () => {
       expect(this.subject.consumer_identity).toEqual(this.consumer_identity)
       expect(this.subject.cocktail).toEqual(this.cocktail)
       expect(this.subject.state).toEqual(Order.QUEUED)
