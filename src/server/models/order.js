@@ -3,9 +3,10 @@ class Order {
   static get PROGRESS()      { return "in_progress" }
   static get READY() { return "ready_for_pickup" }
 
-  constructor(consumer_identity, cocktail) {
+  constructor(consumer_identity, cocktail, time=Date.now()) {
     this.consumer_identity = consumer_identity
     this.cocktail = cocktail
+    this.time = time
     this.state_queued()
   }
 
@@ -19,6 +20,10 @@ class Order {
 
   state_ready() {
     this.state = Order.READY
+  }
+
+  equals(other_order) {
+    return other_order instanceof Order && other_order.time === this.time
   }
 }
 

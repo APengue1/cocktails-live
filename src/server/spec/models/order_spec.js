@@ -48,4 +48,28 @@ describe("Order", () => {
       expect(this.subject.state).toEqual(Order.READY)
     })
   })
+
+  describe("#equals", () => {
+    describe("when not equal", () => {
+      it("returns false", () => {
+        const other_order = new Order()
+        other_order.time = this.subject.time + 1
+        expect(this.subject.equals(other_order)).toBe(false)
+      })
+    })
+    describe("when equal", () => {
+      it("returns true", () => {
+        const other_order = new Order()
+        other_order.time = this.subject.time
+        expect(this.subject.equals(other_order)).toBe(true)
+      })
+    })
+    describe("when not an order", () => {
+      it("returns false", () => {
+        const other_order = {}
+        other_order.time = this.subject.time
+        expect(this.subject.equals(other_order)).toBe(false)
+      })
+    })
+  })
 })
