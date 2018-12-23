@@ -14,6 +14,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use(cookieParser());
 
+require('express-ws')(server);
 require('./routes')(server);
 server.use(express.static(path.join(__dirname, '/../client/build')));
 server.get('*', (req, res) => {
