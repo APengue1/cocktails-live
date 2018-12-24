@@ -1,4 +1,4 @@
-const OrderService = require.main.require('./services/order_service')
+const order_service = require.main.require('./services/order_service')
 const Order = require.main.require('./models/order')
 
 describe("OrderService", () => {
@@ -19,7 +19,8 @@ describe("OrderService", () => {
       ]
     }
     this.order = new Order(this.consumer_identity, this.cocktail)
-    this.subject = new OrderService()
+    this.subject = order_service
+    this.subject.orders = []
   })
 
   describe("#find_order", () => {
