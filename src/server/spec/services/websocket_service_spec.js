@@ -17,10 +17,10 @@ describe("WebsocketService", () => {
     })
   })
 
-  describe("on_websocket_close", () => {
+  describe("remove_websocket", () => {
     beforeEach(() => {
       this.subject.add_websocket(this.ws)
-      this.subject.on_websocket_close(this.ws)
+      this.subject.remove_websocket(this.ws)
     })
     it("removes the websocket from its list of websockets", () => {
       expect(this.subject.websockets.length).toEqual(0)

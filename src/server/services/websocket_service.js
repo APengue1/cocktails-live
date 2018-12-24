@@ -5,7 +5,7 @@ class WebsocketService {
 
   add_websocket(websocket) {
     this.websockets.push(websocket)
-    websocket.on('close', () => this.on_websocket_close(websocket))
+    websocket.on('close', () => this.remove_websocket(websocket))
   }
 
   send_message(message) {
@@ -14,7 +14,7 @@ class WebsocketService {
     }
   }
 
-  on_websocket_close(websocket) {
+  remove_websocket(websocket) {
     const websocket_index = this.websockets.indexOf(websocket)
     if(websocket_index >= 0) {
       this.websockets.splice(websocket_index, 1)
