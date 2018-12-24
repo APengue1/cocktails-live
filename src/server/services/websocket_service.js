@@ -5,13 +5,17 @@ class WebsocketService {
 
   add_websocket(websocket) {
     this.websockets.push(websocket)
-    websocket.on('close', () => this.remove_websocket(websocket))
+    this.register_websocket_events(websocket)
   }
 
   send_message(message) {
     for(const ws of this.websockets) {
       ws.send(message)
     }
+  }
+
+  register_websocket_events(websocket) {
+    websocket.on('close', () => this.remove_websocket(websocket))
   }
 
   remove_websocket(websocket) {
