@@ -3,7 +3,7 @@ const CocktailHelper = require.main.require('./spec/helpers/cocktail_helper')
 
 describe('/', () => {
   beforeAll(() => {
-    this.endpoint = `${require.main.base_url}/api/cocktails`
+    this.endpoint = `http://${require.main.base_url}/api/cocktails`
   })
 
   it("returns all cocktails", async () => {
