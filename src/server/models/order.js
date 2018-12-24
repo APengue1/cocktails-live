@@ -25,6 +25,13 @@ class Order {
   equals(other_order) {
     return other_order instanceof Order && other_order.time === this.time
   }
+
+  static from_json(order_json) {
+    return new Order(
+      order_json.consumer_identity,
+      order_json.cocktail
+    )
+  }
 }
 
 module.exports = Order

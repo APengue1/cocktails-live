@@ -72,4 +72,16 @@ describe("Order", () => {
       })
     })
   })
+
+  describe(".from_json", () => {
+    it("returns a new order instance", () => {
+      const order_json = {
+        consumer_identity: "consumer_identity",
+        cocktail: "cocktail"
+      }
+      const order = Order.from_json(order_json)
+      expect(order.consumer_identity).toEqual(order_json.consumer_identity)
+      expect(order.cocktail).toEqual(order_json.cocktail)
+    })
+  })
 })
