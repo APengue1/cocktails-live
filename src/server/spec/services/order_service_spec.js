@@ -23,20 +23,20 @@ describe("OrderService", () => {
     this.subject.orders = []
   })
 
-  describe("#find_order", () => {
+  describe("#find_order_index", () => {
     beforeEach(() => {
       this.subject.enqueue_order(this.order)
     })
     describe("when the order is found", () => {
-      it("returns the found order", () => {
-        const order = this.subject.find_order(this.order)
-        expect(order).toEqual(this.order)
+      it("returns the found order index", () => {
+        const order_index = this.subject.find_order_index(this.order)
+        expect(this.subject.orders[order_index]).toEqual(this.order)
       })
     })
     describe("when the order is not found", () => {
-      it("returns the order to find", () => {
-        const order = this.subject.find_order({})
-        expect(order).toEqual({})
+      it("returns -1", () => {
+        const order_index = this.subject.find_order_index({})
+        expect(order_index).toEqual(-1)
       })
     })
   })
@@ -50,26 +50,6 @@ describe("OrderService", () => {
     })
     it("puts the order in queued state", () => {
       expect(this.order.state).toEqual(Order.QUEUED)
-    })
-  })
-
-  describe("#progress_order", () => {
-    beforeEach(() => {
-      this.subject.enqueue_order(this.order)
-      this.subject.progress_order(this.order)
-    })
-    it("puts the order in progress state", () => {
-      expect(this.order.state).toEqual(Order.PROGRESS)
-    })
-  })
-
-  describe("#ready_order", () => {
-    beforeEach(() => {
-      this.subject.enqueue_order(this.order)
-      this.subject.ready_order(this.order)
-    })
-    it("puts the order in ready state", () => {
-      expect(this.order.state).toEqual(Order.READY)
     })
   })
 })
