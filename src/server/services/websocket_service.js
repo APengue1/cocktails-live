@@ -22,4 +22,4 @@ class WebsocketService {
   }
 }
 
-module.exports = WebsocketService
+module.exports = new WebsocketService()

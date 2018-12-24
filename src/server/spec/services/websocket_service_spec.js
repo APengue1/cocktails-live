@@ -1,8 +1,9 @@
-const WebsocketService = require.main.require('./services/websocket_service')
+const websocket_service = require.main.require('./services/websocket_service')
 
 describe("WebsocketService", () => {
   beforeEach(() => {
-    this.subject = new WebsocketService()
+    this.subject = websocket_service
+    this.subject.websockets = []
     this.ws = jasmine.createSpyObj('ws', ['send', 'on']);
   })
 
