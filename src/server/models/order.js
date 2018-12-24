@@ -27,10 +27,13 @@ class Order {
   }
 
   static from_json(order_json) {
-    return new Order(
+    const order = new Order(
       order_json.consumer_identity,
-      order_json.cocktail
+      order_json.cocktail,
+      order_json.time
     )
+    order.state = order_json.state
+    return order
   }
 }
 
